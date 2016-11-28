@@ -1,5 +1,5 @@
 /**
- * 26 ms C solution.
+ * 19 ms C solution.
  * Author: Jason Tu.
  * Contain simple test case also.
  */
@@ -11,7 +11,7 @@ int getLongestLength(char *s)
 {
     int cnt = 0;
     int i = 0;
-    char arr[256] = {0};
+    char arr[128] = {0};
     while (*s != '\0') {
         i = *s - 0;
         if (!arr[i]) {
