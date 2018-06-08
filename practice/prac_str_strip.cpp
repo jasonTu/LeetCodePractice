@@ -9,18 +9,12 @@ char * strip(char *dest, const char *src, const char *item)
 
     while (src[i]) {
         j = 0;
-        if (src[i] == item[j]) {
-            while (item[j++]) {
-                if (src[i+j] == item[j])
-                    continue;
-                else
-                    break;
-            }
-            if (item[j] == 0) {
-                i = i + j;
-            }
+        while (src[i+j] == item[j]) {
+            j++;
         }
-        else {
+        if (item[j] == 0) {
+            i = i + j;
+        } else {
             dest[k++] = src[i++];
         }
     }
@@ -30,6 +24,7 @@ char * strip(char *dest, const char *src, const char *item)
 int main(void)
 {
     char dest[10] = {0};
+
 
     cout << strip(dest, "abcddcbca", "bc") << endl;
 
